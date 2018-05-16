@@ -24,14 +24,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.Holder> 
     private LayoutInflater mInflater;
     private List<Contact> contacts;
 
-    public ContactAdapter(Context context) {
-        mInflater = LayoutInflater.from(context);
-        contacts = new ArrayList<>();
-    }
-
-    public void setContacts(List<Contact> contacts) {
-        this.contacts = contacts;
-    }
+    
 
     public List<Contact> getContacts() {
         return contacts;
@@ -81,8 +74,6 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.Holder> 
             // Fix to not loose status on checked/unchecked elements.
             this.setIsRecyclable(false);
 
-            contactName = (TextView) itemView.findViewById(R.id.contact_name);
-            contactPhone = (TextView) itemView.findViewById(R.id.contact_phone);
             checkStatus = (CheckBox) itemView.findViewById(R.id.contact_list_item_checkbox);
         }
     }
