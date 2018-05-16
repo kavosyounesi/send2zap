@@ -139,8 +139,7 @@ public class MainActivity extends AppCompatActivity
         Intent i = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         i.addCategory(Intent.CATEGORY_OPENABLE);
         i.setType("text/*");
-        // Auto enable internal storage on Picker SAF. It is not a official solution
-        i.putExtra("android.content.extra.SHOW_ADVANCED", true);
+       
         startActivityForResult(Intent.createChooser(i, "Abrir CSV"), READ_REQUEST_CODE);
     }
 
@@ -267,7 +266,7 @@ public class MainActivity extends AppCompatActivity
 
     private void showSnackbarMessage(String message, int snackbarDuration) {
         Snackbar.make(mainLayout
-                , message
+                
                 , snackbarDuration).show();
         return;
     }
@@ -281,8 +280,7 @@ public class MainActivity extends AppCompatActivity
 
                     @Override
                     public void onClick(View v) {
-                        Intent i = new Intent(intentAction);
-                        startActivity(i);
+                       
                     }
                 });
         snackbar.show();
@@ -292,10 +290,7 @@ public class MainActivity extends AppCompatActivity
     public void onBackPressed() {
         if (isAccessibilityEnabled()) {
             isPressedBackBeforeConfig = true;
-            showSnackbarActionMessage(getString(R.string.warning_disable_accessibility)
-                    , Snackbar.LENGTH_INDEFINITE
-                    , getString(R.string.snack_enable_service)
-                    , Settings.ACTION_ACCESSIBILITY_SETTINGS);
+        
         } else {
             super.onBackPressed();
         }
